@@ -1,0 +1,50 @@
+
+body{
+    min-height: 100vh;
+    margin: 0;
+}
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.Container{
+    margin-top: -50px;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+.Container-Refri{
+    position: absolute;
+    left: 50%;
+    bottom: 170px;
+}
+.Container-Refri .Cropped-IMG{
+    position: absolute;
+    bottom: 0;
+    transform: translateX(-50%);
+}
+.Cropped-IMG{
+    --left: 0px;
+    background: 
+        var(--url) var(--left),
+        url(assets/freepik-export-20240709010233pHpp.png) 0 0;
+    background-size: auto 100%;
+    width: 280px;
+    aspect-ratio: 2 / 4;
+    background-blend-mode: multiply;
+    transition: 1.2s;
+    mask-image: url(assets/freepik-export-20240709010233pHpp.png);
+    mask-size: auto 100%;
+}
+.Cropped-IMG:nth-child(2){
+    opacity: 0;
+}
+.Container-Refri:hover .Cropped-IMG:nth-child(2){
+    opacity: 1;
+    --left: 500px;
+}
+.Container-Refri:hover .Cropped-IMG:nth-child(1){
+    opacity: 0;
+    --left: 500px;
+}
